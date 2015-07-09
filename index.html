@@ -29,6 +29,8 @@ var player;
 var platforms;
 var cursors;
 var jump;
+var left;
+var right;
 
 var stars;
 var score = 0;
@@ -105,7 +107,6 @@ function create() {
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
     //  Our controls.
-    cursors = game.input.keyboard.createCursorKeys();
 
     jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     
@@ -123,7 +124,11 @@ function create() {
         {
             player.body.velocity.y = 0;
         }
-    }, this); 
+    }, this);
+
+    left = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
+
+    right = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
 }
 
 function update() {
@@ -135,14 +140,14 @@ function update() {
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
     game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
-    if (cursors.left.isDown)
+    if (left.isDown)
     {
         //  Move to the left
         player.body.acceleration.x = -4000;
 
         player.animations.play('left');
     }
-    else if (cursors.right.isDown)
+    else if (right.isDown)
     {
         //  Move to the right
         player.body.acceleration.x = 4000;
