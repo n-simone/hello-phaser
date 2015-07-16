@@ -44,7 +44,7 @@ function create() {
 
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.world.setBounds(0, 0, 2000, 600);
+    game.world.setBounds(0, 0, 10000, 1200);
 
     //  A simple background for our game
     var bg = game.add.sprite(0, 0, 'sky');
@@ -66,18 +66,35 @@ function create() {
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
 
-    //  Now let's create two ledges
-    var ledge = platforms.create(400, 400, 'ground');
-    ledge.body.immovable = true;
+    //  Now let's create many ledges
+    var x = 0;
+    var y = game.world.height / 2;
+    var dx;
+    var ledge;
 
-    ledge = platforms.create(-150, 250, 'ground');
-    ledge.body.immovable = true;
+    while (x < game.world.width)
+    {
+        dx = Math.random() + 1;
 
-    ledge = platforms.create(550, 340, 'ground');
-    ledge.body.immovable = true;
+        ledge = platforms.create(x, y, 'ground');
+        ledge.scale.setTo(dx, 1);
+
+        ledge.body.immovable = true;
+       
+        if (dx * 400 > 500 && Math.random() > .75)
+        {
+            ledge = platforms.create(x + 175 * dx, y - 200, 'ground');
+            ledge.scale.setTo(.3, 5);
+
+            ledge.body.immovable = true;
+        }
+
+        x += 400 * dx + 250;
+        y += Math.random() * 200 - 100;
+    }
 
     // The player and its settings
-    player = game.add.sprite(32, game.world.height - 150, 'hero');
+    player = game.add.sprite(32, 150, 'hero');
     game.camera.follow(player);
 
     //  We need to enable physics on the player
