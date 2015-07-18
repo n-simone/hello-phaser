@@ -17,9 +17,9 @@ var slide;
 var left;
 var right;
 
-var stars;
-var score = 0;
-var scoreText;
+// var stars;
+// var score = 0;
+// var scoreText;
 
 var sliding = 0;
 
@@ -79,12 +79,13 @@ function create() {
     hero = new Hero(game);
 
     //  Finally some stars to collect
-    stars = game.add.group();
+    // stars = game.add.group();
 
     //  We will enable physics for any star that is created in this group
-    stars.enableBody = true;
+    // stars.enableBody = true;
 
     //  Here we'll create 12 of them evenly spaced apart
+    /*
     for (var i = 0; i < 12; i++)
     {
         //  Create a star inside of the 'stars' group
@@ -96,9 +97,10 @@ function create() {
         //  This just gives each star a slightly random bounce value
         star.body.bounce.y = 0.7 + Math.random() * 0.2;
     }
+    */
 
     //  The score
-    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+    // scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
     //  Our controls.
 
@@ -125,10 +127,10 @@ function update() {
 
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(hero.sprite, platforms);
-    game.physics.arcade.collide(stars, platforms);
+    // game.physics.arcade.collide(stars, platforms);
 
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
-    game.physics.arcade.overlap(hero.sprite, stars, collectStar, null, this);
+    // game.physics.arcade.overlap(hero.sprite, stars, collectStar, null, this);
 
     if (left.isDown) hero.run(-1);
     else if (right.isDown) hero.run(1);
@@ -139,7 +141,7 @@ function update() {
 
     if (!hero.sprite.body.touching.down) hero.midair();
 }
-
+/*
 function collectStar (player, star) {
     
     // Removes the star from the screen
@@ -149,4 +151,5 @@ function collectStar (player, star) {
     score += 10;
     scoreText.text = 'Score: ' + score;
 }
+*/
 
