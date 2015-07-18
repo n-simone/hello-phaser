@@ -1,9 +1,9 @@
 - [x] test todo list formatting
 - [x] make object oriented
     - [x] seperate game and classes into separate js files
-- [ ] hero.kill()
-    - [ ] reset hero to start location
-    - [ ] execute when hitting bottom of the world
+- [x] hero.kill()
+    - [x] reset hero to start location
+    - [x] execute when hitting bottom of the world
 - [ ] learn how to make objects that contain multiple tiles
 - [ ] create simple tilesheet for buildings and hazards
 - [ ] make and implement building class

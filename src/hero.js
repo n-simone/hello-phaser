@@ -7,7 +7,7 @@ function Hero (game)
 
     this.sprite.body.bounce.y = 0.0;
     this.sprite.body.gravity.y = 5000;
-    this.sprite.body.collideWorldBounds = true;
+    this.sprite.body.collideWorldBounds = false;
 
     this.sprite.body.drag.x = 4000;
     this.sprite.body.maxVelocity.x = 600;
@@ -79,3 +79,8 @@ Hero.prototype.midair = function ()
     this.sprite.frame = 6;
 }
 
+Hero.prototype.kill = function ()
+{
+    this.sprite.body.x = 32;
+    this.sprite.body.y = 150;
+}

@@ -104,5 +104,7 @@ function update() {
     else hero.slide(false);
 
     if (!hero.sprite.body.touching.down) hero.midair();
+
+    if (hero.sprite.body.y > game.world.height) hero.kill();
 }
 
