@@ -1,0 +1,2 @@
+- [ ] make object oriented
+- [ ] learn how to make objects that contain multiple tiles
