@@ -1,4 +1,4 @@
-- [ ] test todo list formatting
+- [x] test todo list formatting
 - [ ] make object oriented
 - [ ] learn how to make objects that contain multiple tiles
 - [ ] create simple tilesheet for buildings and hazards
