@@ -1,5 +1,6 @@
 - [x] test todo list formatting
 - [ ] make object oriented
+    - [ ] seperate game and classes into separate js files
 - [ ] learn how to make objects that contain multiple tiles
 - [ ] create simple tilesheet for buildings and hazards
 - [ ] make and implement building class
