@@ -1,2 +1,6 @@
-- [ ] make object oriented
-- [ ] learn how to make objects that contain multiple tiles
+[ ] test todo list formatting
+[ ] make object oriented
+[ ] learn how to make objects that contain multiple tiles
+[ ] create simple tilesheet for buildings and hazards
+[ ] make and implement building class
+[ ] make and implement hazard classes (have a hazard master class that specific hazards inherit from?)
