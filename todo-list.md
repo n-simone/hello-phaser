@@ -8,3 +8,6 @@
 - [ ] create simple tilesheet for buildings and hazards
 - [ ] make and implement building class
 - [ ] make and implement hazard classes (have a hazard master class that specific hazards inherit from?)
+- [ ] create new background image
+- [ ] have the bg scroll (slower than the fg so it creates a 2.5D effect)
+- [ ] add distortion effect where nearby pixels are randomly swapped
