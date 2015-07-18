@@ -4,7 +4,6 @@ function preload() {
 
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
-    game.load.image('star', 'assets/star.png');
     game.load.spritesheet('hero', 'assets/hero.png', 40, 52);
 
 }
@@ -16,11 +15,6 @@ var jump;
 var slide;
 var left;
 var right;
-
-// var stars;
-// var score = 0;
-// var scoreText;
-
 var sliding = 0;
 
 function create() {
@@ -78,30 +72,6 @@ function create() {
     
     hero = new Hero(game);
 
-    //  Finally some stars to collect
-    // stars = game.add.group();
-
-    //  We will enable physics for any star that is created in this group
-    // stars.enableBody = true;
-
-    //  Here we'll create 12 of them evenly spaced apart
-    /*
-    for (var i = 0; i < 12; i++)
-    {
-        //  Create a star inside of the 'stars' group
-        var star = stars.create(i * 70, 0, 'star');
-
-        //  Let gravity do its thing
-        star.body.gravity.y = 300;
-
-        //  This just gives each star a slightly random bounce value
-        star.body.bounce.y = 0.7 + Math.random() * 0.2;
-    }
-    */
-
-    //  The score
-    // scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-
     //  Our controls.
 
     jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -124,13 +94,7 @@ function create() {
 }
 
 function update() {
-
-    //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(hero.sprite, platforms);
-    // game.physics.arcade.collide(stars, platforms);
-
-    //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
-    // game.physics.arcade.overlap(hero.sprite, stars, collectStar, null, this);
 
     if (left.isDown) hero.run(-1);
     else if (right.isDown) hero.run(1);
@@ -141,15 +105,4 @@ function update() {
 
     if (!hero.sprite.body.touching.down) hero.midair();
 }
-/*
-function collectStar (player, star) {
-    
-    // Removes the star from the screen
-    star.kill();
-
-    //  Add and update the score
-    score += 10;
-    scoreText.text = 'Score: ' + score;
-}
-*/
 
