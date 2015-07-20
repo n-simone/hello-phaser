@@ -5,7 +5,7 @@
     - [x] reset hero to start location
     - [x] execute when hitting bottom of the world
 - [ ] learn how to make objects that contain multiple tiles
-- [ ] create simple tilesheet for buildings and hazards
+- [x] create simple tilesheet for buildings and hazards
 - [ ] make and implement building class
 - [ ] make and implement hazard classes (have a hazard master class that specific hazards inherit from?)
 - [ ] create new background image

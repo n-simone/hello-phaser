@@ -72,7 +72,7 @@ function create() {
     
     hero = new Hero(game);
 
-    //  Our controls.
+    // Controls //
 
     jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     
@@ -96,8 +96,8 @@ function create() {
 function update() {
     game.physics.arcade.collide(hero.sprite, platforms);
 
-    if (left.isDown) hero.run(-1);
-    else if (right.isDown) hero.run(1);
+    if (right.isDown) hero.run(1);
+    else if (left.isDown) hero.run(-1);
     else hero.run(0);
 
     if (slide.isDown) hero.slide(true);
