@@ -4,6 +4,7 @@ function preload() {
 
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
+    game.load.image('tiles', 'assets/src/ground_1x1.png');
     game.load.spritesheet('hero', 'assets/hero.png', 40, 52);
 
 }
@@ -21,12 +22,21 @@ function create() {
 
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.world.setBounds(0, 0, 10000, 1200);
 
     //  A simple background for our game
-    var bg = game.add.sprite(0, 0, 'sky');
-    bg.fixedToCamera = true;
+    //var bg = game.add.sprite(0, 0, 'sky');
+    // bg.fixedToCamera = true;
+    game.stage.backgroundColor = '#aaaaaa';
 
+    // tilemap
+    map = game.add.tilemap();
+    map.addTilesetImage('tiles');
+
+    fg = map.create('fg', 250, 30, 32, 32);
+    fg.resizeWorld();
+
+    map.setCollision(0, true, fg);
+/*
     //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = game.add.group();
 
@@ -69,7 +79,10 @@ function create() {
         x += 400 * dx + 250;
         y += Math.random() * 200 - 100;
     }
-    
+    */
+
+    generateMap(map, fg);
+
     hero = new Hero(game);
 
     // Controls //
@@ -94,7 +107,7 @@ function create() {
 }
 
 function update() {
-    game.physics.arcade.collide(hero.sprite, platforms);
+    game.physics.arcade.collide(hero.sprite, fg);
 
     if (right.isDown) hero.run(1);
     else if (left.isDown) hero.run(-1);
@@ -103,7 +116,7 @@ function update() {
     if (slide.isDown) hero.slide(true);
     else hero.slide(false);
 
-    if (!hero.sprite.body.touching.down) hero.midair();
+    if (!hero.sprite.body.blocked.down) hero.midair();
 
     if (hero.sprite.body.y > game.world.height) hero.kill();
 }

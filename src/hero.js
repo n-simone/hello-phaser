@@ -20,7 +20,7 @@ Hero.prototype.jump = function (state)
 {
     if (state)
     {
-        if (this.sprite.body.touching.down)
+        if (this.sprite.body.blocked.down)
         {
             this.sprite.body.velocity.y = -1500;
         }
