@@ -85,6 +85,11 @@ function create() {
 
     hero = new Hero(game);
 
+    map.setTileIndexCallback(1, function ()
+    {
+        hero.kill()
+    }, this, fg);
+
     // Controls //
 
     jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -107,6 +112,7 @@ function create() {
 }
 
 function update() {
+    game.physics.arcade.TILE_BIAS = 40;
     game.physics.arcade.collide(hero.sprite, fg);
 
     if (right.isDown) hero.run(1);
