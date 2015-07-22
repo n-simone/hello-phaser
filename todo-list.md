@@ -6,8 +6,9 @@
     - [x] execute when hitting bottom of the world
 - [x] learn how to make objects that contain multiple tiles
 - [x] create simple tilesheet for buildings and hazards
-- [ ] make and implement building class
-- [ ] make and implement hazard classes (have a hazard master class that specific hazards inherit from?)
+- [x] make and implement building class
+- [x] make and implement hazard classes (have a hazard master class that specific hazards inherit from?)
+- [ ] redraw tilesheet to be 32x32 and maybe a little more interesting
 - [ ] create new background image
 - [ ] have the bg scroll (slower than the fg so it creates a 2.5D effect)
 - [ ] add distortion effect where nearby pixels are randomly swapped
