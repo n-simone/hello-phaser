@@ -54,7 +54,26 @@ function newObstacle(map, layer, x, y)
         {
             for (j = y - 7; j < y - 1; j++)
             {
-                map.putTile(1, i, j, layer);
+                if (j == y - 2 && (i == x || i == x + width - 1))
+                {
+                    // do nothing
+                }
+                else if (j == y - 2)
+                {
+                    map.putTile(4, i, j, layer);
+                }
+                else if (i == x)
+                {
+                    map.putTile(3, i, j, layer);
+                }
+                else if (i == x + width - 1)
+                {
+                    map.putTile(2, i, j, layer);
+                }
+                else
+                {
+                    map.putTile(0, i, j, layer);
+                }
             }
         }
     }
@@ -70,7 +89,7 @@ function newObstacle(map, layer, x, y)
         j ++;
         for (i = x; i < x + width; i++)
         {
-            map.putTile(1, i, j, layer);
+            map.putTile(4, i, j, layer);
         }
     }
     return x + width;
