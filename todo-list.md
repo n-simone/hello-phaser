@@ -11,6 +11,7 @@
 - [ ] redraw tilesheet to be 32x32 and maybe a little more interesting
 - [ ] create new background image
 - [ ] have the bg scroll (slower than the fg so it creates a 2.5D effect)
+- [ ] create a loading screen (single infitiely scrolling platform that will turn into the level when it's fully loaded)
 - [ ] add pickups
     - [ ] create sprites (rotating colored cubes)
     - [ ] design effects of each
