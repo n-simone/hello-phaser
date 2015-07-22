@@ -11,4 +11,7 @@
 - [ ] redraw tilesheet to be 32x32 and maybe a little more interesting
 - [ ] create new background image
 - [ ] have the bg scroll (slower than the fg so it creates a 2.5D effect)
+- [ ] add pickups
+    - [ ] create sprites (rotating colored cubes)
+    - [ ] design effects of each
 - [ ] add distortion effect where nearby pixels are randomly swapped
