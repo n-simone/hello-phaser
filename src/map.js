@@ -20,12 +20,15 @@ function newBuilding(map, layer, x, y)
             map.putTile(0, i, j, layer);
         }
     }
-    for (i = x + 7; i < x + width - 10; i++)
+    if (x != 0)
     {
-        if (Math.random() < 1)
+        for (i = x + 7; i < x + width - 10; i++)
         {
-            i = newObstacle(map, layer, i, y);
-            i += 4;
+            if (Math.random() < .5)
+            {
+                i = newObstacle(map, layer, i, y);
+                i += 4;
+            }
         }
     }
     return x + width;
@@ -36,7 +39,8 @@ function newObstacle(map, layer, x, y)
     var type = Math.random();
     var i, j;
     var width;
-    if (type < .33)
+    var probability = .25;
+    if (type < probability)
     {
         // row on ground to jump over
         width = 6;
@@ -46,7 +50,7 @@ function newObstacle(map, layer, x, y)
             map.putTile(1, i, j, layer);
         }
     }
-    else if (type < .66)
+    else if (type < probability * 2)
     {
         // block above ground to slide under
         width = Math.ceil(Math.random() * 4 + 3);
@@ -77,7 +81,7 @@ function newObstacle(map, layer, x, y)
             }
         }
     }
-    else
+    else if (type < probability * 3)
     {
         // row above ground to jump over or slide under
         width = Math.ceil(Math.random() * 4 + 4);
@@ -92,6 +96,20 @@ function newObstacle(map, layer, x, y)
             map.putTile(4, i, j, layer);
         }
     }
+    else
+    {
+        // small hill of spikes
+        width = 5;
+        map.putTile(3, x, y - 1, layer);
+        map.putTile(2, x + width - 1, y - 1, layer);
+        j = y - 2;
+        for (i = x + 1; i < x + width - 1; i++)
+        {
+            map.putTile(1, i, j, layer);
+            map.putTile(0, i, j + 1, layer);
+        }
+    }
+
     return x + width;
 }
 
