@@ -14,6 +14,21 @@
 - [ ] create new background image
 - [ ] have the bg scroll (slower than the fg so it creates a 2.5D effect)
 - [ ] create a loading screen (single infitiely scrolling platform that will turn into the level when its fully loaded)
+- [ ] add new abilities and obstacles to use them
+    - [ ] wallrunning (on walls on x,y plane)
+    - [ ] walljumping (on walls on z,y plane) 
+    - [ ] zip-lines
+    - [ ] windows to break through in buildings
+    - [ ] skylights that break after a small delay (you wont fall through running over them)
+- [ ] add sword and attacks
+    - [ ] basic swing (no charging) (deflects bullets) (assign to Z?)
+    - [ ] power attacks (require charging by using hardcore parkour) (assign to x?)
+        - [ ] while running - dash, destroy all enemies in path
+        - [ ] while in air - dash down, AOE damage and knockback on landing
+        - [ ] while sliding - same dash as while running? seems lame
+- [ ] add enemies
+    - [ ] give them guns
+    - [ ] make them splatter lots of blood when they die
 - [ ] add pickups
     - [ ] create sprites (rotating colored cubes)
     - [ ] design effects of each
