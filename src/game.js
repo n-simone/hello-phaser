@@ -4,7 +4,7 @@ function preload() {
 
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
-    game.load.image('tiles', 'assets/tileset.png');
+    game.load.image('tiles', 'assets/new_tileset.png');
     game.load.spritesheet('hero', 'assets/hero.png', 40, 52);
 
 }
@@ -17,6 +17,7 @@ var slide;
 var left;
 var right;
 var sliding = 0;
+var bg = [0, .5, .5];
 
 function create() {
 

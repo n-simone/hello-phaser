@@ -10,7 +10,7 @@
 - [x] make and implement hazard classes (have a hazard master class that specific hazards inherit from?)
 - [x] redraw tilesheet to be 32x32 and maybe a little more interesting
 - [x] add spikes in other directions to tilesheet
-- [ ] create more interesting tilesheet
+- [x] create more interesting tilesheet
 - [ ] create new background image
 - [ ] have the bg scroll (slower than the fg so it creates a 2.5D effect)
 - [ ] create a loading screen (single infitiely scrolling platform that will turn into the level when its fully loaded)
