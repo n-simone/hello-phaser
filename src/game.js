@@ -16,7 +16,7 @@ var jump;
 var slide;
 var left;
 var right;
-var sliding = 0;
+var sliding;
 var bg = [0, .5, .5];
 
 function create() {
@@ -63,6 +63,17 @@ function create() {
 
     slide = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
     
+    slide.onDown.add(function ()
+    {
+        game.time.events.add(Phaser.Timer.SECOND, function () { /* do nothing */ }, this);
+        game.time.events.start();
+    }, this);
+
+    slide.onUp.add(function ()
+    {
+        game.time.events.stop();
+    }, this);
+
     left = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
 
     right = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
@@ -76,7 +87,7 @@ function update() {
     else if (left.isDown) hero.run(-1);
     else hero.run(0);
 
-    if (slide.isDown) hero.slide(true);
+    if (game.time.events.duration > 0) hero.slide(true);
     else hero.slide(false);
 
     if (!hero.sprite.body.blocked.down) hero.midair();
